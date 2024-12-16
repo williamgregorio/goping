@@ -28,7 +28,10 @@ intermittent network, focus on later after the concepts are ready
 
 /* main */
 func main() {
-	for i, arg := range os.Args {
-		fmt.Printf("os.args[%d] -> %s\n", i, arg)
+	fmt.Println(len(os.Args))
+
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: pingo <hostname> or <ip>")
+		os.Exit(7)
 	}
 }
